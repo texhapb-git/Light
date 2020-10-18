@@ -9,11 +9,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var isLightOn: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        updateView()
     }
 
 
+    fileprivate func updateView() {
+        view.backgroundColor = isLightOn ? .white : .black
+    }
+    
+    @IBAction func buttonPressed() {
+        isLightOn.toggle()
+        updateView()
+    }
 }
 
